@@ -1,0 +1,284 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90vh;
+    .buttonContainer {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    button {
+            height: 6.25rem;
+            width: 6.25rem;
+            border-radius: 50%;
+            position: relative;
+            border: none;
+            position: relative;
+            z-index: 5;
+            &:disabled{
+                background-color: #efefef;
+                cursor: initial;
+            }
+        }
+    span {
+            position: absolute;
+            height: 6.25rem;
+            width: 6.25rem;
+            border-radius: 50%;
+            border: transparent;
+            animation: ripple 2s linear infinite;
+        }
+    }
+header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 2rem;
+        border-radius: 10px;
+        padding: 0.48rem;
+    }
+img {
+        height: 2.94rem;
+    }
+.gameNameContainer {
+        height: 3.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        span {
+            font-size: 1.15rem;
+            letter-spacing: 0.90px;
+            font-weight: 600;
+        }
+    }
+.betContainer {
+        width: 4.75rem;
+        display: flex;
+        font-size: 2rem;
+        font-weight: 700;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 5px;
+        span {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        select {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        p {
+            font-size: 0.85rem;
+        }
+    }
+.balanceContainer {
+        width: 4.75rem;
+        height: 4.75rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 5px;
+        p {
+            font-size: 0.85rem;
+        }
+span {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+    }
+main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+.gamingWrapper {
+            flex: 1;
+        }
+.gamingContainer {
+            display: grid;
+            flex: 1;
+p {
+        color: var(--white);
+ }
+}
+.resultContainer {
+            grid-area: result;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 3rem;
+            p {
+                font-weight: 700;
+                font-size: 2.42rem;
+                color: var(--white);
+            }
+button {
+                height: 3rem;
+                width: 13.62rem;
+                border-radius: 10px;
+                border: none;
+                margin-top: 1.65rem;
+                font-size: 0.75rem;
+                font-weight: 600;
+            }
+        }
+    }
+footer {
+        display: flex;
+        justify-content: center;
+        padding: 3.5rem;
+        .rulesButton {
+            border: 4px solid var(--header-outline);
+            background: transparent;
+            height: 2.38rem;
+            width: auto;
+            padding: 0 2.38rem;
+            border-radius: 5px;
+        }
+    }
+}
+@keyframes ripple {
+    0% {
+        box-shadow: 0 0 0 0rem rgba(rgba(255,255,255, 0.1), 0.1),
+        0 0 0 1rem rgba(rgba(255,255,255, 0.1), 0.1),
+        0 0 0 2rem rgba(rgba(255,255,255, 0.1), 0.1),
+        0 0 0 5rem rgba(rgba(255,255,255, 0.1), 0.1);
+    }
+100% {
+        box-shadow: 0 0 0 1rem rgba(rgba(255,255,255, 0.1), 0.1),
+        0 0 0 2rem rgba(rgba(255,255,255, 0.1), 0.1),
+        0 0 0 5rem rgba(rgba(255,255,255, 0.1), 0.1),
+        0 0 0 8rem rgba(rgba(255,255,255, 0.1), 0);
+    }
+}
+.modalAnimationShowUp{
+    animation: showUp 0.25s linear forwards;
+}
+.modalAnimationClose{
+    animation: close 0.25s linear forwards;
+}
+@keyframes showUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes close {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+100% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}
+.modalContainer{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(12px);
+    background-color: rgba(0, 0, 0, 0.15);
+    z-index: 10;
+    .rulesContainer{
+        opacity: 0;
+        background-color: var(--white);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4rem 0;
+        transform: translateY(100%);
+        p {
+            font-weight: 700;
+            font-size: 2.56rem;
+            color: var(--dark-text);
+        }
+    img {
+            max-width: 100%;
+            height: 16.86rem;
+        }
+    button{
+            height: 1.125rem;
+            border: none;
+            background-color: transparent;
+
+            img{
+                height: 100%;
+            }
+        }
+    }
+}
+@media(min-width: 1366px) {
+    .container{
+        align-items: center;
+        header{
+            width: 80%;
+            img{
+                height: 5.6rem;
+            }
+        }
+    .balanceContainer{
+            width: 10rem;
+            height: 6rem;
+            p {
+                font-size: 1rem;
+            }
+         span {
+                font-size: 2.45rem;
+            }
+        }
+    main {
+            align-items: flex-start;
+    .gamingContainer{
+                align-items: center;
+                gap: 3rem;
+            }
+        }
+    footer {
+            position: absolute;
+            bottom: 0;
+            justify-content: flex-end;
+            width: 100%;
+        }
+    }
+.modalContainer {
+        transition: visibility 0.4s;
+        .rulesContainer {
+            height: 25.93rem;
+            width: 24.87rem;
+            border-radius: 20px;
+            padding: 1.5rem;
+            position: relative;
+            justify-content: center;
+            p {
+                font-size: 1.56rem;
+                position: absolute;
+                left: 2rem;
+                top: 1.5rem;
+            }
+        img {
+                max-width: 100%;
+                height: 16.86rem;
+            }
+        button {
+                position: absolute;
+                right: 2rem;
+                top: 1.5rem;
+            }
+        }
+    }
+}

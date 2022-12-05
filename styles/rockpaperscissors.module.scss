@@ -1,0 +1,370 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 95vh;
+    .buttonContainer {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:nth-child(1) {
+            grid-area: paper;
+        }
+    &:nth-child(2) {
+            grid-area: scissors;
+        }
+    &:nth-child(3) {
+            grid-area: rock;
+        }
+    button {
+            height: 6.25rem;
+            width: 6.25rem;
+            border-radius: 50%;
+            position: relative;
+            background-color: #efefef;
+            border: none;
+            position: relative;
+            z-index: 5;
+            &:disabled{
+                background-color: #efefef;
+                cursor: initial;
+            }
+        }
+    span {
+            position: absolute;
+            height: 6.25rem;
+            width: 6.25rem;
+            border-radius: 50%;
+            border: transparent;
+            animation: ripple 2s linear infinite;
+        }
+    .paper {
+            box-shadow:
+            0px -3px 0 10px #5671f5,
+            0 0 0 13px #4865f4,
+            inset 0px 2px 0 2px #d6d6d6;
+            margin-right: 2rem;
+        }
+    .scissors {
+            box-shadow:
+            0px -3px 0 10px hsl(40, 84%, 53%),
+            0 0 0 13px hsl(39, 89%, 49%),
+            inset 0px 2px 0 2px #d6d6d6;
+        }
+    .rock {
+            justify-self: center;
+            box-shadow:
+            0px -3px 0 10px hsl(349, 70%, 56%),
+            0 0 0 13px hsl(349, 71%, 52%),
+            inset 0px 2px 0 2px #d6d6d6;
+        }
+    }
+header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 4px solid var(--header-outline);
+        margin: 2rem;
+        border-radius: 10px;
+        padding: 0.68rem;
+    }
+img {
+        height: 2.94rem;
+    }
+.gameNameContainer {
+        height: 3.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        span {
+            font-size: 1.15rem;
+            letter-spacing: 0.90px;
+            font-weight: 600;
+        }
+    }
+.balanceContainer {
+        background-color: var(--white);
+        width: 4.75rem;
+        height: 4.75rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 5px;
+        p {
+            font-size: 0.85rem;
+            color:var(--score-text);
+        }
+span {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark-text);
+        }
+    }
+
+main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        .pickContainer{
+            background: url('/game_assets/rockpaperscissors/bg-triangle.svg') center no-repeat;
+            background-size: 80%;
+            display: grid;
+            justify-content: center;
+            gap: 2.5rem;
+            grid-template-areas:
+            "paper scissors"
+            "rock rock"
+        ;
+}
+.gamingWrapper {
+            flex: 1;
+        }
+.gamingContainer {
+            display: grid;
+            flex: 1;
+            padding: 2.5rem;
+            grid-template-areas:
+            "playerChoice houseChoice"
+            "result result"
+;
+            .playerChoiceContainer{
+                margin-right: 2rem;
+                grid-area: playerChoice;
+            }
+.playerChoiceContainer,
+.houseChoiceContainer
+{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    button {
+        margin-right: 0;
+    }
+}
+.houseChoiceContainer {
+                grid-area: houseChoice;
+                span {
+                    height: 6.25rem;
+                    width: 6.25rem;
+                    border-radius: 50%;
+                    background-color: var(--dark-text);
+                }
+            }
+p {
+ color: var(--white);
+ }
+}
+.resultContainer {
+            grid-area: result;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 3rem;
+            p {
+                font-weight: 700;
+                font-size: 2.42rem;
+                color: var(--white);
+            }
+button {
+                height: 3rem;
+                width: 13.62rem;
+                border-radius: 10px;
+                border: none;
+                margin-top: 1.65rem;
+                font-size: 0.75rem;
+                font-weight: 600;
+            }
+        }
+    }
+footer {
+        display: flex;
+        justify-content: center;
+        padding: 3.5rem;
+        .rulesButton {
+            border: 4px solid var(--header-outline);
+            background: transparent;
+            height: 2.38rem;
+            width: auto;
+            color: var(--white);
+            padding: 0 2.38rem;
+            border-radius: 5px;
+        }
+    }
+}
+@keyframes ripple {
+    0% {
+        box-shadow: 0 0 0 0rem rgba(rgba(255,255,255, 0.1), 0.1),
+        0 0 0 1rem rgba(rgba(255,255,255, 0.1), 0.1),
+        0 0 0 2rem rgba(rgba(255,255,255, 0.1), 0.1),
+        0 0 0 5rem rgba(rgba(255,255,255, 0.1), 0.1);
+    }
+100% {
+        box-shadow: 0 0 0 1rem rgba(rgba(255,255,255, 0.1), 0.1),
+        0 0 0 2rem rgba(rgba(255,255,255, 0.1), 0.1),
+        0 0 0 5rem rgba(rgba(255,255,255, 0.1), 0.1),
+        0 0 0 8rem rgba(rgba(255,255,255, 0.1), 0);
+    }
+}
+.modalAnimationShowUp{
+    animation: showUp 0.35s linear forwards;
+}
+.modalAnimationClose{
+    animation: close 0.35s linear forwards;
+}
+@keyframes showUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes close {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+100% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}
+.modalContainer{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(25px);
+    background-color: rgba(0, 0, 0, 0.35);
+    z-index: 10;
+    .rulesContainer{
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4rem 0;
+        transform: translateY(100%);
+        p {
+            font-weight: 700;
+            font-size: 2.56rem;
+        }
+    img {
+            max-width: 100%;
+            height: 16.86rem;
+        }
+    button{
+            height: 1.125rem;
+            border: none;
+            background-color: transparent;
+
+            img{
+                height: 100%;
+            }
+        }
+    }
+}
+@media(min-width: 1366px) {
+    .container{
+        align-items: center;
+        header{
+            width: 80%;
+            img{
+                height: 5.6rem;
+            }
+        }
+    .buttonContainer{
+            button{
+                height: 9.5rem;
+                width: 9.5rem;
+                img{
+                    height: 52%;
+                }
+            }
+    .paper{
+                box-shadow: 0px -4px 0 15px #5671f5, 0px 4px 0 15px #4865f4, inset 0px 5px 0 3px #d6d6d6;
+            }
+    .scissors{
+                box-shadow: 0px -4px 0 15px #eca922, 0px 4px 0 15px #ec9e0e, inset 0px 5px 0 3px #d6d6d6;
+            }
+    .rock{
+                box-shadow: 0px -4px 0 15px #dd405d, 0px 4px 0 15px #dc2e4e, inset 0px 5px 0 3px #d6d6d6;
+            }
+        }
+    .balanceContainer{
+            width: 10rem;
+            height: 6rem;
+            p{
+                font-size: 1rem;
+            }
+    span {
+                font-size: 2.45rem;
+            }
+        }
+    main {
+            align-items: flex-start;
+            .pickContainer {
+                gap:3.5rem;
+            }
+    .gamingContainer{
+                align-items: center;
+                gap: 3rem;
+                grid-template-areas:
+                "playerChoice result houseChoice"
+    ;
+                .resultContainer{
+                    margin: 0;
+                }
+    .playerChoiceContainer,
+    .houseChoiceContainer
+    {
+        margin: 0;
+        flex-direction: column-reverse;
+    }
+            }
+        }
+    footer {
+            position: absolute;
+            bottom: 0;
+            justify-content: flex-end;
+            width: 100%;
+        }
+    }
+.modalContainer {
+        transition: visibility 0.4s;
+        .rulesContainer {
+            height: 25.93rem;
+            width: 24.87rem;
+            border-radius: 20px;
+            padding: 1.5rem;
+            position: relative;
+            justify-content: center;
+            p {
+                font-size: 1.56rem;
+                position: absolute;
+                left: 2rem;
+                top: 1.5rem;
+            }
+        img {
+                max-width: 100%;
+                height: 16.86rem;
+            }
+        button {
+                position: absolute;
+                right: 2rem;
+                top: 1.5rem;
+            }
+        }
+    }
+}
