@@ -1,7 +1,7 @@
 import { GetServerSideProps } from 'next';
 import { useEffect, useState } from 'react'
-import { RockPaperScissorsButton } from 'components/game/internal/rockpaperscissors/RockPaperScissorsButton';
-import { RockPaperScissorsRules } from 'components/game/internal/rockpaperscissors/RockPaperScissorsRules';
+import { RockPaperScissorsButton } from '/components/game/internal/rockpaperscissors/RockPaperScissorsButton';
+import { RockPaperScissorsRules } from '/components/game/internal/rockpaperscissors/RockPaperScissorsRules';
 import styles from '/styles/rockpaperscissors.module.scss';
 import { useRouter } from "next/router";
 import sleep from "utils/sleep";

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useCookies } from "react-cookie";
 import type { NextPage } from "next";
-import NavBarAuthenticated from "components/navbar/NavBarAuthenticated";
+import NavBarAuthenticated from "/components/navbar/NavBarAuthenticated";
 import Game from "./game.tsx";
 import Loader from "components/Loader";
 import sleep from "utils/sleep";

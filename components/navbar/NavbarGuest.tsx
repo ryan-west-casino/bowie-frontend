@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { themeChange } from 'theme-change';
-
 const NavBarGuest = () => {
     useEffect(() => {
         themeChange(false);
@@ -29,15 +28,16 @@ const NavBarGuest = () => {
                         <option disabled value="">
                             Theme
                         </option>
+                        <option value="synthwave">Synthwave</option>
                         <option value="dark">Dark</option>
                         <option value="business">Business</option>
                         <option value="aqua">Aqua</option>
-                        <option value="synthwave">Synthwave</option>
+                        <option value="dracula">Dracula</option>
+                        <option value="luxury">Luxury</option>
                         <option value="coffee">Coffee</option>
                     </select>
                 </div>
             </div>
             );
 };
-
 export default NavBarGuest;
