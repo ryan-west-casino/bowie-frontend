@@ -1,14 +1,14 @@
 import type { NextPage } from "next";
-
-import WalletOverview from "components/wallet/WalletOverview";
-import NavBar from "components/NavBar";
+import LobbyList from "components/LobbyList";
+import NavBarAuthenticated from "components/navbar/NavBarAuthenticated";
 import { useEffect, useState } from "react";
 
 const WalletPage: NextPage = () => {
+
   return (
-    <div>
-        <NavBar />
-        <WalletOverview />
+    <div className="min-h-screen animate-fade-in-up">
+        <NavBarAuthenticated />
+        <LobbyList />
     </div>
   );
 };

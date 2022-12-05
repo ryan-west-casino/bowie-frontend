@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-
 import LobbyList from "components/LobbyList";
 import NavBarAuthenticated from "components/navbar/NavBarAuthenticated";
 import { useEffect, useState } from "react";
