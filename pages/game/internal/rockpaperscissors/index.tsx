@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import NavBarAuthenticated from "components/navbar/NavBarAuthenticated";
+import NavBarAuthenticated from "/components/navbar/NavBarAuthenticated";
 import Game from "./game";
 import Loader from "components/Loader";
 import { useEffect, useState } from "react";

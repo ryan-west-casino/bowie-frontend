@@ -3,8 +3,8 @@ import symbolDictionary from './symbolDictionary.json'
 import sleep from "utils/sleep";
 import { useRouter } from "next/router";
 import styles from '/styles/threeinarow.module.scss';
-import { ThreeInARowConfetti } from 'components/game/internal/threeinarow/ThreeInARowConfetti';
-import { ThreeInARowRules } from 'components/game/internal/threeinarow/ThreeInARowRules';
+import { ThreeInARowConfetti } from '/components/game/internal/threeinarow/ThreeInARowConfetti';
+import { ThreeInARowRules } from '/components/game/internal/threeinarow/ThreeInARowRules';
 
 interface ThreeInARowProps{
     GameBalance: number;

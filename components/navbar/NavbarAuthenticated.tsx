@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { themeChange } from 'theme-change';
-
 const NavBarAuthenticated = () => {
     useEffect(() => {
         themeChange(false);
@@ -26,11 +25,6 @@ const NavBarAuthenticated = () => {
                     </Link>
                 </div>
                 <div className="navbar-end">
-                    <select className="select select-ghost max-w-xs">
-                        <option value="usd">USD</option>
-                        <option value="eur">EUR</option>
-                        <option value="gbp">GBP</option>
-                    </select>
                     <select className="select select-ghost max-w-xs" data-choose-theme>
                         <option disabled value="">
                             Theme
@@ -47,5 +41,4 @@ const NavBarAuthenticated = () => {
             </div>
             );
 };
-
 export default NavBarAuthenticated;
