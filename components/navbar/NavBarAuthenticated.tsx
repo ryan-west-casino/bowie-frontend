@@ -20,9 +20,9 @@ const NavBarAuthenticated = () => {
                     </div>
                 </div>
                 <div className="navbar-center">
-                    <Link href="/" className="btn btn-ghost normal-case text-xl">
+                    <div className="btn btn-ghost normal-case text-xl">
                         bowie
-                    </Link>
+                    </div>
                 </div>
                 <div className="navbar-end">
                     <select className="select select-ghost max-w-xs" data-choose-theme>
