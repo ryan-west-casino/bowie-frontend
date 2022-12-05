@@ -18,7 +18,7 @@ You could check if [bowie.casinoman.app](https://bowie.casinoman.app) is up, to 
 ### login/register screen
 ![pre auth screen login/register](https://raw.githubusercontent.com/ryan-west-casino/bowie-media/main/bowie-preauth-guest.png)
 
-*more images @ [me.casinoman.app](https://me.casinoman.app) or [ryan-west-casino/bowie-media](https://github.com/ryan-west-casino-bowie-media)
+*more images @ [me.casinoman.app](https://me.casinoman.app) or at [ryan-west-casino/bowie-media](https://github.com/ryan-west-casino/bowie-media)*
 
 ## Setup frontend: development/
 - Set backend url (lumen repository) to your api backend in .env (copy .env.example > .env)
