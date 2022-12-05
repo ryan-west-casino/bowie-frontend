@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 
-import Register from "/components/auth/Register";
-import NavBarGuest from "/components/navbar/NavBarGuest";
+import Register from "components/auth/Register";
+import NavBarGuest from "components/navbar/NavBarGuest";
 
 const RegisterPage: NextPage = () => {
   return (
