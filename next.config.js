@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
     typescript: {
         // !! WARN !!
         // Dangerously allow production builds to successfully complete even if
@@ -7,7 +8,7 @@ const nextConfig = {
         // !! WARN !!
         ignoreBuildErrors: true,
     },
-  reactStrictMode: true,
+  nextScriptWorkers: true,
   swcMinify: true,
   async rewrites() {
     return [

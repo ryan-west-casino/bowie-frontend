@@ -3,10 +3,12 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-
+import LobbyBalanceInplay from "components/LobbyBalanceInplay";
+import BalanceTransferModal from "components/wallet/BalanceTransferModal";
 import LobbyBalance from "components/LobbyBalance";
 import LobbyListing from "components/LobbyListing";
 import Loader from "components/Loader";
+import { useCookies } from "react-cookie"
 
 import sleep from "utils/sleep";
 
@@ -14,11 +16,14 @@ const LobbyList = () => {
     const router = useRouter();
     const [Commands, setCommands] = useState<Array<Command>>([]);
     const [Balances, setBalances] = useState<Array<Balance>>([]);
-
+    const [cookie, setCookie] = useCookies(["token"]) ?? '0';
     useEffect(() => {
         const fetchCommands = async () => {
             const response = await fetch("/api/lobby", {
                 method: "GET",
+		        headers: {
+		          "Authorization": "Bearer " +  Object.values(cookie),
+		        },
             });
             await sleep(125);
             if (response.ok) {
@@ -26,6 +31,7 @@ const LobbyList = () => {
                 setCommands(lobbyresponse.data);
                 console.log(lobbyresponse);
                 setBalances(lobbyresponse.balances);
+
             } else if (response.status === 401) {
                 router.push('/auth/logout');
             }

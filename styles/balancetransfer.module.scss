@@ -1,0 +1,79 @@
+@keyframes ripple {
+    0% {
+        box-shadow: 0 0 0 0rem rgba(rgba(255,255,255, 0.1), 0.1),
+        0 0 0 1rem rgba(rgba(255,255,255, 0.1), 0.1),
+        0 0 0 2rem rgba(rgba(255,255,255, 0.1), 0.1),
+        0 0 0 5rem rgba(rgba(255,255,255, 0.1), 0.1);
+    }
+100% {
+        box-shadow: 0 0 0 1rem rgba(rgba(255,255,255, 0.1), 0.1),
+        0 0 0 2rem rgba(rgba(255,255,255, 0.1), 0.1),
+        0 0 0 5rem rgba(rgba(255,255,255, 0.1), 0.1),
+        0 0 0 8rem rgba(rgba(255,255,255, 0.1), 0);
+    }
+}
+.modalAnimationShowUp{
+    animation: showUp 0.35s linear forwards;
+}
+.modalAnimationClose{
+    animation: close 0.35s linear forwards;
+}
+@keyframes showUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes close {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+100% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+}
+.modalContainer{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(25px);
+    background-color: rgba(0, 0, 0, 0.35);
+    z-index: 10;
+    .balanceTransferContainer{
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4rem 0;
+        transform: translateY(100%);
+        p {
+            font-weight: 700;
+            font-size: 2.56rem;
+        }
+    img {
+            max-width: 100%;
+            height: 16.86rem;
+        }
+    button{
+            height: 1.125rem;
+            border: none;
+            background-color: transparent;
+
+            img{
+                height: 100%;
+            }
+        }
+    }
+}

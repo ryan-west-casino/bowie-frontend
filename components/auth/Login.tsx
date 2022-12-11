@@ -38,7 +38,7 @@ const Login = () => {
       const access_token = data.access_token;
       setCookie("token", (data.access_token), {
         path: "/",
-        maxAge: 3600, // Expires after 1hr
+        maxAge: (data.expires_in), //expire time in seconds
         sameSite: true,
       });
       router.push(`/?login=true`);

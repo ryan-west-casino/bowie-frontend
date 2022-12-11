@@ -46,7 +46,6 @@ export default function Game({GameBalance}: RpsProps, {betSize}: RockPaperScisso
                 setHouseChoice(gameresult.data.print_result.verbose);
                 setGameBalance(gameresult.data.print_statement.formatted);
                 await sleep(75);
-
                 setResult((gameresult.data.print_statement.outcome).toUpperCase());
                 setIsFinished(true);
             } else if (response.status === 401) {

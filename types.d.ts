@@ -19,4 +19,9 @@ type Balance = {
     fa: icon;
     name: string;
     formatted: number;
-}
+};
+type InitData = {
+    game: array;
+    init_meta: array;
+    extra_init_function: array;
+};

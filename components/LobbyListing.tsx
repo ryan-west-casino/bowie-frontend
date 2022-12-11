@@ -10,15 +10,16 @@ const LobbyListing = (props: Props) => {
 
   return (
     <Link href={Command.link}>
-        <div className="card bg-base-300 w-[32rem] text-base-content">
+        <div className="card bg-base-300 w-[32rem] text-base-content" id={Command.id}>
           <div className="card-body">
             <h2 className="card-title">{Command.name}</h2>
             <p>{Command.desc}</p>
               <p className="ml-auto">
-                  <i>{Command.type}</i></p>
+                  <i>{Command.provider}</i></p>
           </div>
         </div>
     </Link>
+
   );
 };
 
